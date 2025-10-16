@@ -1,0 +1,30 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: ds-jaeger
+  namespace: grafana
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: "main"
+  datasource:
+    name: Jaeger
+    type: jaeger
+    access: proxy
+    url: http://jaeger-query.jaeger.svc.cluster.local:16686
+---
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: ds-prom
+  namespace: grafana
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: "main"
+  datasource:
+    name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://kps-kube-prometheus-stack-prometheus.tanzu-system-monitoring.svc.cluster.local:9090   # adjust to your service
+    isDefault: true

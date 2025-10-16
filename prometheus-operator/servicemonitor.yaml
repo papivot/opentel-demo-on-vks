@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: otel-collector-monitor
+  namespace: tanzu-system-monitoring
+  labels:
+    release: kps
+spec:
+  namespaceSelector:
+    matchNames:
+    - opentel
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: my-otel-demo
+      app.kubernetes.io/name: opentelemetry-collector
+  endpoints:
+  - port: metrics
+    path: /metrics
+    interval: 15s
