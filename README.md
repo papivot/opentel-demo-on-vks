@@ -17,7 +17,7 @@ vcf package available get cluster-autoscaler.kubernetes.vmware.com/1.33.0+vmware
 
 # Modify the values.yaml for the autoscaler
 
-vcf package install cert-manager-pkg -n tkg-system --package cert-manager.kubernetes.vmware.com --version 1.18.2+vmware.1-vks.
+vcf package install cert-manager-pkg -n tkg-system --package cert-manager.kubernetes.vmware.com --version 1.18.2+vmware.1-vks.1
 vcf package install cluster-autoscaler-pkg -n tkg-system --package cluster-autoscaler.kubernetes.vmware.com --version 1.33.0+vmware.1-vks.1 --values-file ./autoscaler-data-values.yaml
 vcf package install contour-pkg -n tkg-system --package contour.kubernetes.vmware.com --version 1.32.0+vmware.1-vks.1 --values-file ./contour-data-values.yaml
 
