@@ -1,0 +1,14 @@
+arguments:
+  ignoreDaemonsetsUtilization: true
+  maxNodeProvisionTime: 15m
+  maxNodesTotal: 0
+  metricsPort: 8085
+  scaleDownDelayAfterAdd: 10m
+  scaleDownDelayAfterDelete: 10s
+  scaleDownDelayAfterFailure: 3m
+  scaleDownUnneededTime: 10m
+clusterConfig:
+  clusterName: "workload-vsphere-vks2"
+  clusterNamespace: "demo1"
+paused: false
+priorityClassName: ""
